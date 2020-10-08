@@ -1,2 +1,2 @@
 # Mortgage Calculator
-A simple program that utilizies the terminal for user input and calculates a mortgage from the values the user types in. This program has no error handling for the time being, this will be implemented in the next update of this project
+A simple program that utilizies the terminal for user input and calculates a mortgage from the values the user types in. Implemented error handling by creating recursive functions that return data and or call themselves till the correct input is recieved from the user.
