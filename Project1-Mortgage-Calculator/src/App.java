@@ -10,6 +10,14 @@ public class App {
     // r = Interest Rate
     // n = Number of Payments; we will be doing years for period so multiply this period by 12; result is n
     // use Math.pow() to use ^n
+    // expression 2
+    /*
+    B = L[(1 + c)^n - (1 + c)^p] / [(1 + c)^n - 1]
+    L = principal
+    c = monthly rate
+    n = number of payments
+    p = number of payements made
+    */
 
     Scanner scanner = new Scanner(System.in);
 
@@ -17,31 +25,27 @@ public class App {
     final byte MONTHS_IN_YEAR = 12;
 
     int principal = getPrincipal(scanner);
-    // another way
-    /*
-    int principal = 0;
-    while (true) {
-      System.out.print("Principal: ");
-      principal = scanner.nextInt();
-      if (principal >= 1_000 && principal <= 1_000_000)
-        break;
-      System.out.println("Enter a value between 1000 and 1000000")
-    }
-    */
 
-    // greater than 0 or less than or equal to 30
     float annualRate = getAnnualRate(scanner);
     float monthlyRate = annualRate / PERCENT / MONTHS_IN_YEAR;
 
     byte years = getYears(scanner);
     int numberOfPayments = years * MONTHS_IN_YEAR;
     
-    double mortgage = principal
-                    * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments))
-                    / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-    String mortgageInCurrency = NumberFormat.getCurrencyInstance().format(mortgage);
+    String mortgage = calculateMortgage(
+                        principal, 
+                        monthlyRate, 
+                        numberOfPayments
+                      );
 
-    System.out.print("Mortage: " + mortgageInCurrency);
+    String paymentSchedule = calculateSchedule(
+                              principal,
+                              monthlyRate,
+                              numberOfPayments
+                            );
+
+    System.out.println(createMsg("MORTGAGE", mortgage));
+    System.out.println(createMsg("BREAKDOWN", paymentSchedule));
 
     scanner.close();
     
@@ -111,4 +115,73 @@ public class App {
       return getYears(scanner);
     }
   }
+
+  public static String calculateMortgage(
+    int principal, 
+    float monthlyRate, 
+    int numberOfPayments
+    ) {
+    double mortgage = principal *
+      (
+        monthlyRate * 
+        Math.pow(
+          1 + monthlyRate, 
+          numberOfPayments
+        )
+      ) / 
+      (
+        Math.pow(
+          1 + monthlyRate, 
+          numberOfPayments
+        ) - 1);
+    
+    String mortgageInCurrency = NumberFormat.getCurrencyInstance().format(mortgage);
+
+    return mortgageInCurrency;
+  }
+
+  public static String calculateSchedule(
+    int principal, 
+    float monthlyRate, 
+    int numberOfPayments
+  ) {
+    String breakdown = "";
+    
+    for (int i = 0; i < numberOfPayments + 1; i++) {
+      double balance = principal *
+        (
+          Math.pow(1 + monthlyRate,
+            numberOfPayments  
+          ) -
+          Math.pow(1 + monthlyRate,
+            i
+          )
+        ) / (
+          Math.pow(1 + monthlyRate,
+          numberOfPayments
+        ) - 1
+      );
+
+      String balanceinCurrency = NumberFormat.getCurrencyInstance().format(balance);
+
+      breakdown += balanceinCurrency + "\n";
+    }
+
+    return breakdown;
+  }
+
+  public static String createMsg(
+    String msg,
+    String data
+    ) {
+      int msgLength = msg.length();
+      String divider = "";
+      for (int i = 0; i < msgLength; i++) {
+        divider += '-';
+      }
+
+      String fullMsg = "\n" + msg + "\n" + divider + "\n" + data;
+
+      return fullMsg;
+    }
 }
