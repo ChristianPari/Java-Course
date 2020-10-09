@@ -12,7 +12,7 @@ public class Console {
         break;
       System.out.println("Enter a value between " + min + " and " + max);
     }
-    scanner.close();
+    
     return value;
   }
 }
