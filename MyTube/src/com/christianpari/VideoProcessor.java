@@ -1,14 +1,23 @@
 package com.christianpari;
 
 public class VideoProcessor {
+    private canEncodeVideo encoder;
+    private VideoDatabase database;
+    private NotificationService notificationService;
+
+    public VideoProcessor(
+            canEncodeVideo encoder,
+            VideoDatabase database,
+            NotificationService notificationService
+            ) {
+        this.encoder = encoder;
+        this.database = database;
+        this.notificationService = notificationService;
+    }
+
     public void process(Video video) {
-        var encoder = new VideoEncoder();
         encoder.encode(video);
-
-        var database = new VideoDatabase();
         database.store(video);
-
-        var emailService = new EmailService();
-        emailService.sendEmail(video.getUser());
+        notificationService.sendEmail(video.getUser());
     }
 }
