@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Concept-Exercises/Concept-Exercises.iml" filepath="$PROJECT_DIR$/Concept-Exercises/Concept-Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Concept-Exercises-v2/Concept-Exercises-v2.iml" filepath="$PROJECT_DIR$/Concept-Exercises-v2/Concept-Exercises-v2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java-Course.iml" filepath="$PROJECT_DIR$/Java-Course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mortgage-Calculator-Exercise/Mortgage-Calculator-Exercise.iml" filepath="$PROJECT_DIR$/Mortgage-Calculator-Exercise/Mortgage-Calculator-Exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyTube/MyTube.iml" filepath="$PROJECT_DIR$/MyTube/MyTube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project1-Mortgage-Calculator/Project1-Mortgage-Calculator.iml" filepath="$PROJECT_DIR$/Project1-Mortgage-Calculator/Project1-Mortgage-Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project2-Mortgage-Calculator/Project2-Mortgage-Calculator.iml" filepath="$PROJECT_DIR$/Project2-Mortgage-Calculator/Project2-Mortgage-Calculator.iml" />
+    </modules>
+  </component>
+</project>
