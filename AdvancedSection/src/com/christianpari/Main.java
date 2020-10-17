@@ -2,6 +2,8 @@ package com.christianpari;
 
 import com.christianpari.exceptions.ExceptionsDemo;
 
+import java.io.IOException;
+
 // EXCEPTIONS
 /*
 3 TYPES
@@ -34,6 +36,10 @@ ERROR (indicates an error outside of the application)
 public class Main {
 
     public static void main(String[] args) {
-        ExceptionsDemo.show();
+        try {
+            ExceptionsDemo.show();
+        } catch (Throwable e) {
+            System.out.println("An Unexpected Error Occurred");
+        }
     }
 }
