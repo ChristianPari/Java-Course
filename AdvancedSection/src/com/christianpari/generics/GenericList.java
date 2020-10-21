@@ -1,6 +1,6 @@
 package com.christianpari.generics;
 /*
-Using "T" within arrow brackets after the name of the class
+Using "T" within angle brackets after the name of the class
 is the type parameter; T is for Template, E is for Element
 
 Class Parameter

@@ -19,7 +19,7 @@ public class GenMain {
 //    System.out.println(max);
 //    Utils.print(1, "Chris");
 
-    User user = new Instructor(10);
-    Utils.printUser(user);
+    var users = new GenericList<User>();
+    Utils.printUsers(users);
   }
 }
