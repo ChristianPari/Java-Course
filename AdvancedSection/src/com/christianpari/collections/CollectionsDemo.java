@@ -23,6 +23,7 @@ public class CollectionsDemo {
     .contains() - by passing an item as argument it will return true or false
     .toArray() - w/ no arguments, returns ObjectArray so has Object methods
     .toArray(new String[0]) - returns a String array so now each item has String methods
+    .sort() -
 
   Comparing collections for equality
     collection.equals(other) - will return true or false depending on the content of the objects
