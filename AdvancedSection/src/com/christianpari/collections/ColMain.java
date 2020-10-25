@@ -6,6 +6,6 @@ import java.util.List;
 
 public class ColMain {
   public static void main(String[] args) {
-    SetDemo.show();
+    MapDemo.show();
   }
 }
