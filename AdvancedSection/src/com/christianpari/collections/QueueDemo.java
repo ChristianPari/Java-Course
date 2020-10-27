@@ -10,8 +10,8 @@ public class QueueDemo {
     queue.add("a");
     queue.add("b");
 //    queue currently looks like b -> a -> c
-//     if the Queue had a specific size and becomes full, add throws an exception
-//     while offer returns false
+//     if the Queue had a specific size and becomes full, add() throws an exception
+//     while offer() returns false
 //     queue.offer("d");
 //    String front = queue.peek(); // returns the value of the item that is in the front of the queue
 //    can use peek() or element() to get the front-most item

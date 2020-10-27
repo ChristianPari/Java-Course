@@ -10,9 +10,12 @@ public class ListDemo {
 //    list.add("a");
 //    list.add("b");
 //    list.add("c");
+//  can add an item at a specific index of a List by the overloaded method that takes an integer and an item; below
 //    list.add(0, "!");
     Collections.addAll(list, "a", "b", "c");
+//  set(index, item) - replaces the element at a given index
 //    list.set(0, "a+");
+//  remove() - removes an element at a given index
 //    list.remove(0);
 //    System.out.println(list.get(0));
 //    System.out.println(list.indexOf("a"));

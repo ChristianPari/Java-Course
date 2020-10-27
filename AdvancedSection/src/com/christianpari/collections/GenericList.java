@@ -38,9 +38,11 @@ public class GenericList<T> implements Iterable<T> {
 //  returning a ListIterator object that knows how to iterate over a GenericList
   @Override
   public Iterator<T> iterator() {
+//    since the GenericList we want to iterate through is the file we are within, we can pass "this" into the argument below
     return new ListIterator(this);
   }
 
+//  using the same type parameter for the Iterator Interface that is being used throughout this class
   private class ListIterator implements Iterator<T> {
     private GenericList<T> list;
     private int index;
@@ -49,11 +51,14 @@ public class GenericList<T> implements Iterable<T> {
       this.list = list;
     }
 
+//  will return true if the index isnt greater than the amount of items within the list, otherwise false
+//  count is being gathered from the add method above, which is basically the "length" of the list
     @Override
     public boolean hasNext() {
       return (index < list.count);
     }
 
+//  increments the index each time its called but returns the index before incrementing; 0++ returns 0 next call is 1++
     @Override
     public T next() {
       return list.items[index++];

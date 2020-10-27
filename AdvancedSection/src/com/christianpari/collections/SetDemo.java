@@ -20,9 +20,10 @@ public class SetDemo {
     Set<String> set2 = new HashSet<>(Arrays.asList("b", "c", "d"));
     /*
     Operations...
-    Union - adding one Set to another via addAll()
-    Intersection - by using retainAll() you keep only items that appear in both sets
-    Difference - by using removeAll() you take away everything from the being compared set that is within the comparing set
+    Union - adding one Set to another via addAll() [ set1.addAll(set2) // returns [a, b, c, d] ]
+    Intersection - by using retainAll() you keep only items that appear in both sets [ set1.retainAll(set2) // returns [b, c] ]
+    Difference - by using removeAll() you take away everything from the being compared set
+                 that is within the comparing set [ set1.removeAll(set2) // returns [a] ]
      */
   }
 }
