@@ -1,4 +1,4 @@
-package com.christianpari.exceptions;
+package src.com.christianpari.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package com.christianpari.exceptions;
+package src.com.christianpari.exceptions;
 // Checked => Exception
 // Unchecked => RuntimeException
 
